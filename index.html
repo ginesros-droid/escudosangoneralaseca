@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El escudo de Sangonera la Seca | Guía interactiva del patrimonio</title>
+<meta name="description" content="Descubre el significado de cada elemento del escudo heráldico de Sangonera la Seca (Murcia): sus cuarteles, símbolos, historia y heráldica, de forma visual e interactiva.">
+
+<!-- Open Graph básico -->
+<meta property="og:title" content="El escudo de Sangonera la Seca">
+<meta property="og:description" content="Guía interactiva para descubrir el significado de cada elemento del escudo de Sangonera la Seca.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/Escudo_Sangonera_La_Seca.jpg">
+
+<!-- Datos estructurados básicos -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "El escudo de Sangonera la Seca",
+  "description": "Guía interactiva sobre el significado del escudo heráldico de Sangonera la Seca, pedanía de Murcia.",
+  "about": {
+    "@type": "Place",
+    "name": "Sangonera la Seca"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+<!-- =====================================================
+     CABECERA
+     Los textos se generan desde js/app.js (CONFIGURACIÓN DEL PROYECTO)
+     ===================================================== -->
+<header class="cabecera">
+  <div class="cabecera__contenido">
+    <p class="cabecera__eyebrow" id="nombre-pedania">Sangonera la Seca</p>
+    <h1 class="cabecera__titulo" id="titulo-proyecto">El escudo de Sangonera la Seca</h1>
+    <p class="cabecera__subtitulo" id="subtitulo-proyecto">Descubre el significado de cada uno de sus elementos</p>
+  </div>
+</header>
+
+<main id="contenido-principal">
+
+  <!-- =====================================================
+       SECCIÓN PRINCIPAL: ESCUDO INTERACTIVO + PANEL INFO
+       ===================================================== -->
+  <section class="seccion-escudo" aria-label="Escudo interactivo">
+
+    <div class="panel-escudo">
+
+      <div class="controles-escudo" role="toolbar" aria-label="Controles del escudo">
+        <button type="button" class="btn-icono" id="btn-zoom-in" aria-label="Ampliar escudo" title="Ampliar">+</button>
+        <button type="button" class="btn-icono" id="btn-zoom-out" aria-label="Reducir escudo" title="Reducir">−</button>
+        <button type="button" class="btn-icono btn-icono--texto" id="btn-zoom-reset" aria-label="Restablecer zoom" title="Restablecer">Restablecer</button>
+        <button type="button" class="btn-icono btn-icono--texto" id="btn-fullscreen" aria-label="Ver escudo a pantalla completa" title="Pantalla completa">⛶ Pantalla completa</button>
+      </div>
+
+      <div class="escudo-viewport" id="escudo-viewport">
+        <div class="escudo-lienzo" id="escudo-lienzo">
+          <img
+            src="assets/Escudo_Sangonera_La_Seca.jpg"
+            alt="Escudo heráldico de Sangonera la Seca: cuartel superior izquierdo en rojo con tres montañas blancas de sal, corona y muralla dorada; cuartel superior derecho en azul con una roca, un roque dorado, racimo de moras y flores de lis sobre ondas; campo negro central con dos espadas cruzadas ensangrentadas; ondas azules y blancas en la parte inferior; timbrado con corona real y cintas con el lema Vox Nigra et Sanguinaria."
+            id="imagen-escudo"
+          >
+          <!-- Capa SVG interactiva transparente superpuesta a la imagen.
+               El viewBox coincide con las dimensiones reales de la imagen (950x1433)
+               para que las zonas se mantengan proporcionales en cualquier tamaño. -->
+          <svg
+            id="svg-escudo"
+            class="svg-zonas"
+            viewBox="0 0 950 1433"
+            preserveAspectRatio="xMidYMid meet"
+            role="group"
+            aria-label="Zonas interactivas del escudo"
+          >
+            <!-- Las zonas <path>/<polygon> se generan también dinámicamente desde
+                 app.js a partir de elementosEscudo, pero se dejan aquí de forma
+                 estática y comentada para facilitar el ajuste manual de coordenadas. -->
+
+            <!-- Coordenadas obtenidas mediante análisis de color de la imagen real
+                 (segmentación por color + trazado de contorno), no estimadas a ojo,
+                 para que cada zona coincida rigurosamente con la forma del dibujo.
+                 Ajustar puntos del polygon si se sustituye la imagen del escudo. -->
+
+            <!-- ZONA INTERACTIVA - CORONA -->
+            <polygon data-id="corona" points="190,202 194,183 202,175 210,158 222,156 234,143 246,144 250,136 258,130 270,133 282,124 298,128 306,121 314,121 322,127 334,121 346,129 354,126 362,113 378,111 386,99 394,98 402,102 414,91 422,92 426,96 434,90 442,89 450,92 454,98 466,91 474,94 478,100 486,99 494,86 498,48 506,48 510,34 518,34 522,48 534,48 538,88 550,102 554,96 562,92 574,95 590,89 598,91 602,98 606,93 614,91 626,99 638,98 646,101 654,111 666,113 674,126 682,128 694,121 706,125 722,121 734,128 746,124 758,133 766,130 778,133 782,144 794,142 802,147 806,156 818,157 822,161 826,174 834,179 842,209 844,439 150,439"></polygon>
+
+            <!-- ZONA INTERACTIVA - CARTELA SUPERIOR (VOX NIGRA) -->
+            <polygon data-id="cartela-superior" points="112,248 130,317 143,400 157,483 173,567 197,630 218,600 180,615 77,600 65,533 52,450 38,367 32,277 82,332"></polygon>
+
+            <!-- ZONA INTERACTIVA - CARTELA INFERIOR (ET SANGUINARIA) -->
+            <polygon data-id="cartela-inferior" points="833,903 860,1100 883,1167 900,1233 910,1300 913,1367 647,1393 597,1367 555,1393 570,1367 607,1317 650,1260 693,1207 733,1150 767,1100 797,1060 813,917"></polygon>
+
+            <!-- ZONA INTERACTIVA - PRIMER CUARTEL (completo) -->
+            <polygon data-id="primer-cuartel" points="220,439 513,439 513,749 220,749"></polygon>
+
+            <!-- ZONA INTERACTIVA - CORONA PEQUEÑA DEL PRIMER CUARTEL -->
+            <polygon data-id="corona-pequena" points="310,478 323,459 331,470 367,451 373,470 386,459 399,478 399,511 322,511"></polygon>
+
+            <!-- ZONA INTERACTIVA - MONTAÑAS -->
+            <polygon data-id="montanas" points="241,591 274,538 277,538 316,593 367,534 415,592 418,592 457,536 493,594 509,597 223,597"></polygon>
+
+            <!-- ZONA INTERACTIVA - MURALLA / CONSTRUCCIÓN DE PIEDRA -->
+            <polygon data-id="muralla" points="220,597 513,597 513,749 220,749"></polygon>
+
+            <!-- ZONA INTERACTIVA - ELEMENTO ROJO INFERIOR DEL PRIMER CUARTEL -->
+            <polygon data-id="elemento-rojo" points="360,649 395,653 418,664 433,678 451,706 457,730 455,746 430,746 421,734 365,685 363,694 356,699 358,705 352,711 359,717 367,717 372,712 368,698 372,698 426,746 278,746 277,723 283,702 296,681 316,663 331,656 337,657 338,653 360,649"></polygon>
+
+            <!-- ZONA INTERACTIVA - SEGUNDO CUARTEL (completo) -->
+            <polygon data-id="segundo-cuartel" points="516,439 808,439 808,749 516,749"></polygon>
+
+            <!-- ZONA INTERACTIVA - ELEMENTO CENTRAL DEL SEGUNDO CUARTEL (roca + roque + moras) -->
+            <polygon data-id="elemento-central-2" points="606,613 625,475 636,461 638,459 645,455 665,451 670,452 685,470 689,476 717,604 717,656 615,656 609,654 607,653 606,637"></polygon>
+
+            <!-- ZONA INTERACTIVA - FLORES DE LIS (dos formas, mismo data-id) -->
+            <polygon data-id="flores-lis" points="548,559 550,556 562,541 563,540 570,534 572,534 577,538 581,542 593,557 595,560 600,625 600,631 598,630 561,588 548,566"></polygon>
+            <polygon data-id="flores-lis" points="730,559 732,556 742,543 747,538 752,534 754,534 759,538 763,542 775,557 776,560 776,565 775,568 763,588 755,597 753,598 752,598 750,596 743,588 730,567"></polygon>
+
+            <!-- ZONA INTERACTIVA - ONDAS DE AGUA DEL SEGUNDO CUARTEL -->
+            <polygon data-id="ondas-cuartel2" points="516,629 808,629 808,747 516,747"></polygon>
+
+            <!-- ZONA INTERACTIVA - CAMPO NEGRO CENTRAL -->
+            <polygon data-id="campo-negro" points="217,749 849,749 849,1149 217,1149"></polygon>
+
+            <!-- ZONA INTERACTIVA - ARMAS CRUZADAS -->
+            <polygon data-id="armas-cruzadas" points="459,864 469,864 536,911 562,898 584,881 593,882 596,886 596,897 563,930 590,949 602,932 617,931 622,936 622,942 609,962 640,984 649,985 653,990 651,1003 645,1007 633,1005 625,994 599,976 582,1000 576,1001 569,993 568,981 580,963 546,939 520,951 496,957 448,958 431,955 426,959 436,973 435,979 415,980 404,974 383,991 385,998 372,999 366,996 363,991 364,976 366,973 375,976 397,962 397,946 404,933 408,933 419,949 439,940 454,924 485,924 514,918 458,878 456,867 459,864"></polygon>
+
+            <!-- ZONA INTERACTIVA - GOTAS DE SANGRE (punta ensangrentada + gota, dos formas, mismo data-id) -->
+            <polygon data-id="gotas-sangre" points="421,877 422,843 423,842 433,842 435,843 438,845 451,854 458,859 461,862 461,863 455,872 428,880 424,881 422,880"></polygon>
+            <polygon data-id="gotas-sangre" points="590,879 617,848 619,848 622,887 622,891 619,893 597,891 596,890 590,881"></polygon>
+
+            <!-- ZONA INTERACTIVA - ONDAS INFERIORES -->
+            <polygon data-id="ondas-inferiores" points="217,1149 257,1150 264,1158 271,1166 278,1174 287,1182 295,1190 306,1198 318,1206 332,1214 350,1222 376,1230 450,1255 549,1268 648,1255 722,1230 729,1222 737,1214 745,1206 755,1198 765,1190 776,1182 787,1174 798,1166 807,1158 815,1150 849,1149"></polygon>
+
+          </svg>
+        </div>
+      </div>
+
+      <p class="leyenda-instruccion">Pulsa sobre cualquier elemento del escudo para conocer su significado.</p>
+
+      <ul class="leyenda-categorias" id="leyenda-categorias" aria-label="Categorías de elementos"></ul>
+
+      <div class="acciones-escudo">
+        <button type="button" class="btn btn--primario" id="btn-explorar">Explorar el escudo</button>
+        <button type="button" class="btn btn--secundario" id="btn-ver-todo">Ver el escudo completo</button>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         PANEL DE INFORMACIÓN
+         ===================================================== -->
+    <aside class="panel-info" id="panel-info" aria-live="polite">
+      <div class="panel-info__vacio" id="panel-info-vacio">
+        <p>Selecciona un elemento del escudo para ver su ficha, o pulsa <strong>«Explorar el escudo»</strong> para un recorrido guiado.</p>
+      </div>
+
+      <div class="panel-info__contenido" id="panel-info-contenido" hidden>
+        <span class="panel-info__categoria" id="info-categoria"></span>
+        <h2 class="panel-info__titulo" id="info-titulo"></h2>
+        <p class="panel-info__nombre" id="info-nombre"></p>
+
+        <div class="panel-info__bloque">
+          <h3>Descripción visual</h3>
+          <p id="info-descripcion"></p>
+        </div>
+
+        <div class="panel-info__bloque">
+          <h3>Significado heráldico</h3>
+          <p id="info-significado"></p>
+        </div>
+
+        <div class="panel-info__bloque">
+          <h3>Historia</h3>
+          <p id="info-historia"></p>
+        </div>
+
+        <div class="panel-info__bloque panel-info__fuente">
+          <h3>Fuente</h3>
+          <p id="info-fuente"></p>
+        </div>
+
+        <div class="panel-info__navegacion" id="panel-info-navegacion" hidden>
+          <button type="button" class="btn btn--texto" id="btn-anterior">← Anterior</button>
+          <span class="panel-info__paso" id="info-paso"></span>
+          <button type="button" class="btn btn--texto" id="btn-siguiente">Siguiente →</button>
+        </div>
+
+        <div class="panel-info__acciones">
+          <button type="button" class="btn btn--secundario" id="btn-ver-todo-panel">Ver todo el escudo</button>
+          <button type="button" class="btn btn--cerrar" id="btn-cerrar">Cerrar</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- =====================================================
+       SECCIÓN: EL ESCUDO COMPLETO
+       ===================================================== -->
+  <section class="seccion-completa" id="seccion-completa" hidden>
+    <h2>El escudo completo</h2>
+    <div class="explicacion-general" id="explicacion-general"></div>
+    <h3>Todas las partes del escudo</h3>
+    <div class="tarjetas-elementos" id="tarjetas-elementos"></div>
+  </section>
+
+</main>
+
+<!-- =====================================================
+     PIE DE PÁGINA
+     ===================================================== -->
+<footer class="pie">
+  <p>Proyecto web interactivo sobre el patrimonio y la identidad local.</p>
+  <p class="pie__autor" id="pie-autor"></p>
+</footer>
+
+<!-- Protección disuasoria contra copia/inspección casual (ver comentario en el propio archivo). -->
+<script src="js/proteccion.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
