@@ -200,30 +200,44 @@ main {
 }
 
 /* Pista visual: en móvil, el desplazamiento de la página no funciona
-   sobre el dibujo del escudo (esa zona está reservada al zoom/arrastre),
-   así que se indica con dos flechas fijas en el borde derecho, fuera del
-   escudo, que recuerdan por dónde sí se puede deslizar la pantalla. */
+   sobre el dibujo del escudo (esa zona está reservada al zoom/arrastre).
+   La fila coloca las flechas justo al borde del marco del escudo,
+   centradas verticalmente con él, para recordar por dónde sí se puede
+   deslizar la pantalla. */
+.escudo-viewport-fila {
+  display: flex;
+  align-items: center;
+}
+
+.escudo-viewport-fila .escudo-viewport {
+  min-width: 0;
+}
+
 .indicador-scroll {
   display: none;
 }
 
 @media (max-width: 900px) and (pointer: coarse) {
+  .escudo-viewport-fila {
+    gap: 0.4rem;
+  }
+
+  .escudo-viewport-fila .escudo-viewport {
+    flex: 1 1 auto;
+  }
+
   .indicador-scroll {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
-    position: fixed;
-    right: 4px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
+    gap: 1rem;
+    flex-shrink: 0;
+    opacity: 0.6;
     pointer-events: none;
-    opacity: 0.55;
   }
 
   .indicador-scroll__flecha {
-    font-size: 0.8rem;
+    font-size: 2rem;
     line-height: 1;
     color: var(--color-texto-suave);
   }
