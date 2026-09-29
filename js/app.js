@@ -723,13 +723,63 @@ document.addEventListener('DOMContentLoaded', () => {
     return Math.hypot(dx, dy);
   }
 
+  // El tacto no tiene "hover" real: en vez de depender de los eventos de
+  // ratón sintéticos que el navegador dispara tras un touchend (poco
+  // fiables: la etiqueta aparece y se oculta de inmediato), se sigue el
+  // dedo directamente con elementFromPoint mientras se desliza sobre el
+  // escudo, y se selecciona el elemento al soltar si no hubo arrastre.
+  let touchZonaActual = null;
+  let touchInicioX = 0;
+  let touchInicioY = 0;
+  let touchSeMovio = false;
+  const UMBRAL_TOQUE_PX = 10;
+
+  function zonaEnPunto(clientX, clientY) {
+    const el = document.elementFromPoint(clientX, clientY);
+    return el ? el.closest('[data-id]') : null;
+  }
+
+  function actualizarHoverTactil(clientX, clientY) {
+    const zona = zonaEnPunto(clientX, clientY);
+    const idNuevo = zona ? zona.dataset.id : null;
+    const idActual = touchZonaActual ? touchZonaActual.dataset.id : null;
+    if (idNuevo !== idActual) {
+      if (touchZonaActual) zonasPorId(idActual).forEach(z => z.classList.remove('zona-hover'));
+      touchZonaActual = zona;
+      if (zona) zonasPorId(idNuevo).forEach(z => z.classList.add('zona-hover'));
+    }
+    if (zona) {
+      const datos = mapaElementos.get(idNuevo);
+      if (datos) {
+        const rect = viewport.getBoundingClientRect();
+        mostrarTooltip(datos.nombre, clientX - rect.left, clientY - rect.top);
+      }
+    } else {
+      ocultarTooltip();
+    }
+  }
+
+  function finalizarHoverTactil() {
+    if (touchZonaActual) {
+      zonasPorId(touchZonaActual.dataset.id).forEach(z => z.classList.remove('zona-hover'));
+    }
+    touchZonaActual = null;
+    ocultarTooltip();
+  }
+
   viewport.addEventListener('touchstart', (evt) => {
     if (evt.touches.length === 2) {
       distanciaInicialTactil = distanciaEntreToques(evt.touches);
       escalaInicialTactil = escala;
-    } else if (evt.touches.length === 1 && escala > 1) {
-      toqueUnicoInicioX = evt.touches[0].clientX - desplazX;
-      toqueUnicoInicioY = evt.touches[0].clientY - desplazY;
+    } else if (evt.touches.length === 1) {
+      touchInicioX = evt.touches[0].clientX;
+      touchInicioY = evt.touches[0].clientY;
+      touchSeMovio = false;
+      if (escala > 1) {
+        toqueUnicoInicioX = evt.touches[0].clientX - desplazX;
+        toqueUnicoInicioY = evt.touches[0].clientY - desplazY;
+      }
+      actualizarHoverTactil(evt.touches[0].clientX, evt.touches[0].clientY);
     }
   }, { passive: true });
 
@@ -742,16 +792,32 @@ document.addEventListener('DOMContentLoaded', () => {
       const nueva = distanciaEntreToques(evt.touches);
       const factor = nueva / distanciaInicialTactil;
       establecerZoom(escalaInicialTactil * factor);
-    } else if (evt.touches.length === 1 && escala > 1) {
-      desplazX = evt.touches[0].clientX - toqueUnicoInicioX;
-      desplazY = evt.touches[0].clientY - toqueUnicoInicioY;
-      limitarDesplazamiento();
-      aplicarTransformacion(false);
+    } else if (evt.touches.length === 1) {
+      const t = evt.touches[0];
+      if (Math.hypot(t.clientX - touchInicioX, t.clientY - touchInicioY) > UMBRAL_TOQUE_PX) {
+        touchSeMovio = true;
+      }
+      if (escala > 1) {
+        desplazX = t.clientX - toqueUnicoInicioX;
+        desplazY = t.clientY - toqueUnicoInicioY;
+        limitarDesplazamiento();
+        aplicarTransformacion(false);
+      }
+      actualizarHoverTactil(t.clientX, t.clientY);
     }
   }, { passive: false });
 
   viewport.addEventListener('touchend', () => {
     distanciaInicialTactil = null;
+    if (!touchSeMovio && touchZonaActual) {
+      seleccionarElemento(touchZonaActual.dataset.id);
+    }
+    finalizarHoverTactil();
+  });
+
+  viewport.addEventListener('touchcancel', () => {
+    distanciaInicialTactil = null;
+    finalizarHoverTactil();
   });
 
   // =====================================================
