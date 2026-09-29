@@ -204,26 +204,20 @@ main {
    La fila coloca las flechas justo al borde del marco del escudo,
    centradas verticalmente con él, para recordar por dónde sí se puede
    deslizar la pantalla. */
-.escudo-viewport-fila {
-  display: flex;
-  align-items: center;
-}
-
-.escudo-viewport-fila .escudo-viewport {
-  min-width: 0;
-}
-
 .indicador-scroll {
   display: none;
 }
 
 @media (max-width: 900px) and (pointer: coarse) {
   .escudo-viewport-fila {
+    display: flex;
+    align-items: center;
     gap: 0.4rem;
   }
 
   .escudo-viewport-fila .escudo-viewport {
     flex: 1 1 auto;
+    min-width: 0;
   }
 
   .indicador-scroll {
