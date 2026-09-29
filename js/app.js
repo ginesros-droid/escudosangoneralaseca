@@ -734,13 +734,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   viewport.addEventListener('touchmove', (evt) => {
+    // Se bloquea siempre el desplazamiento nativo de la página al arrastrar
+    // sobre el escudo (coherente con touch-action: none en el CSS); solo se
+    // mueve la imagen cuando hay pellizco o cuando está ampliada.
+    evt.preventDefault();
     if (evt.touches.length === 2 && distanciaInicialTactil) {
-      evt.preventDefault();
       const nueva = distanciaEntreToques(evt.touches);
       const factor = nueva / distanciaInicialTactil;
       establecerZoom(escalaInicialTactil * factor);
     } else if (evt.touches.length === 1 && escala > 1) {
-      evt.preventDefault();
       desplazX = evt.touches[0].clientX - toqueUnicoInicioX;
       desplazY = evt.touches[0].clientY - toqueUnicoInicioY;
       limitarDesplazamiento();
