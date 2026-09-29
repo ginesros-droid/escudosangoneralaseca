@@ -1,8 +1,7 @@
 'use strict';
 const nombrePedania = "Sangonera la Seca";
 const tituloProyecto = "Escudo - Significado";
-const subtituloProyecto =
-  "Descubre el significado de cada uno de sus elementos";
+const subtituloProyecto = "Significado de cada elemento";
 const autor = "Ginés Ros";
 const categoriasEscudo = [
   { id: "heraldico", nombre: "Elementos heráldicos", color: "#8c1d2b" },

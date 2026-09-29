@@ -568,6 +568,23 @@ main {
     flex: 1 1 auto;
     text-align: center;
   }
+  .controles-escudo {
+    gap: 0.3rem;
+  }
+  .btn-icono {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+  .btn-icono--texto {
+    width: auto;
+    height: 30px;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
 }
 
 /* Pantalla completa: aprovechar todo el espacio disponible */

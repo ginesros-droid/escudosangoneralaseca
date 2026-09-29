@@ -11,8 +11,7 @@ const nombrePedania = "Sangonera la Seca";
 
 const tituloProyecto = "Escudo - Significado";
 
-const subtituloProyecto =
-  "Descubre el significado de cada uno de sus elementos";
+const subtituloProyecto = "Significado de cada elemento";
 
 const autor = "Ginés Ros";
 
