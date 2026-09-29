@@ -1,6 +1,6 @@
 'use strict';
 const nombrePedania = "Sangonera la Seca";
-const tituloProyecto = "El escudo de Sangonera la Seca";
+const tituloProyecto = "Escudo - Significado";
 const subtituloProyecto =
   "Descubre el significado de cada uno de sus elementos";
 const autor = "Ginés Ros";
