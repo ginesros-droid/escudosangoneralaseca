@@ -62,7 +62,6 @@ def main():
         shutil.rmtree(DESTINO)
     (DESTINO / "css").mkdir(parents=True)
     (DESTINO / "js").mkdir(parents=True)
-    (DESTINO / "assets").mkdir(parents=True)
 
     html = (ORIGEN / "index.html").read_text(encoding="utf-8")
     html_min = minificar_html(html)
@@ -77,10 +76,7 @@ def main():
         js_min = quitar_comentarios_js(js)
         (DESTINO / "js" / nombre).write_text(js_min, encoding="utf-8")
 
-    shutil.copy2(
-        ORIGEN / "assets" / "Escudo_Sangonera_La_Seca.jpg",
-        DESTINO / "assets" / "Escudo_Sangonera_La_Seca.jpg",
-    )
+    shutil.copytree(ORIGEN / "assets", DESTINO / "assets")
 
     def tam(p):
         return p.stat().st_size

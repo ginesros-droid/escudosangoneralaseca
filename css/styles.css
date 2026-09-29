@@ -282,32 +282,6 @@ main {
   margin: 0.9rem 0 0.6rem;
 }
 
-.leyenda-categorias {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  justify-content: center;
-  padding: 0;
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  color: var(--color-texto-suave);
-}
-
-.leyenda-categorias li {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.punto-categoria {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
 .acciones-escudo {
   display: flex;
   flex-wrap: wrap;
@@ -428,6 +402,39 @@ main {
 
 .panel-info__fuente p {
   font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+.panel-info__multimedia {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.panel-info__multimedia-item {
+  margin: 0;
+}
+
+.panel-info__multimedia-item img,
+.panel-info__multimedia-item video {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+}
+
+.panel-info__multimedia-item img {
+  cursor: zoom-in;
+}
+
+.panel-info__multimedia-item img:fullscreen {
+  object-fit: contain;
+  background: #000;
+}
+
+.panel-info__multimedia-item figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
   color: var(--color-texto-suave);
 }
 

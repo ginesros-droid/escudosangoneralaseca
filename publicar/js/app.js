@@ -96,6 +96,25 @@ const elementosEscudo = [
       "En plata, tres montañas de sal que simbolizan las Salinas Reales de Sangonera.",
     historia:
       "Las Salinas de Sangonera, ya explotadas por los romanos, conservan un caserón del siglo XIX y forman uno de los parajes diseminados de la pedanía.",
+    multimedia: [
+      {
+        tipo: "imagen",
+        src: "assets/salinas-recreacion-2025.png",
+        alt: "Recreación del entorno de las Salinas Reales en su época de actividad",
+        pie: "Recreación del entorno en la época de actividad — Ginés Ros, 2025"
+      },
+      {
+        tipo: "video",
+        src: "assets/salinas-recreacion-2025.mp4",
+        pie: "Salinas Reales de Sangonera la Seca — Ginés Ros, 2025"
+      },
+      {
+        tipo: "imagen",
+        src: "assets/salinas-estado-actual-2022.png",
+        alt: "Estado actual de las Salinas Reales en 2022",
+        pie: "Estado de las Salinas Reales, 2022"
+      }
+    ],
     fuente: FUENTE_PRINCIPAL,
     coordenadas: { tipo: "polygon", zona: "mitad superior del primer cuartel" }
   },
@@ -109,8 +128,11 @@ const elementosEscudo = [
     significado:
       "Representa el puente romano conocido como «Pontarrón», sobre el que se sitúan las montañas de sal y la corona real.",
     historia:
-      "El puente romano del Puntarrón da nombre al barrio del Puntarrón, uno de los barrios históricos de Sangonera la Seca.",
-    fuente: FUENTE_PRINCIPAL,
+      "El puente romano del Puntarrón da nombre al barrio del Puntarrón, uno de los barrios históricos de Sangonera la Seca. " +
+      "Los detalles documentados sobre este paraje proceden del libro «Bastitania y Contestania del Reino de Murcia» (1794), del historiador y religioso Juan Lozano y Santa (el canónigo Lozano), quien recorrió la Región de Murcia como «anticuario aficionado», anotando los descubrimientos que los agricultores realizaban en sus tierras. En los parajes de Buznegra y El Puntarrón constató la existencia de «un puente de fábrica romana» —término que en el castellano del siglo XVIII designaba las construcciones sólidas de piedra, sillería o ladrillo (mampostería), frente a los puentes provisionales de madera—. Para sostener la cronología romana del puente y de los caminos que cruzaban Sangonera la Seca, documentó el hallazgo en los campos colindantes de «una destacada colección de monedas, tanto del Bajo como del Alto Imperio», halladas por los lugareños al remover la tierra de cultivo, que abarcaban desde el mayor esplendor de Roma hasta su decadencia y confirmaban que el Puntarrón era una vía de tránsito comercial y militar de primer orden, vinculada a la antigua Vía Augusta. Lozano dejó constancia además de que la superficie de ambos parajes estaba repleta de fragmentos cerámicos y materiales de construcción de origen romano, lo que indica la presencia de antiguas villas agrícolas o puestos de control asociados a la vigilancia del puente. Gracias a este rescate documental del siglo XVIII, recogido hoy en el portal Región de Murcia Digital, los historiadores modernos pudieron certificar que el origen de Sangonera la Seca está profundamente ligado a la arqueología romana, pese a que el desarrollo urbanístico posterior borrara las estructuras en superficie.",
+    fuente:
+      FUENTE_PRINCIPAL +
+      " Los datos históricos sobre el puente proceden de los estudios arqueológicos de la Región de Murcia, recopilados y publicados por el portal oficial Región de Murcia Digital (Regmurcia), en su sección dedicada a la Historia Antigua de Sangonera la Seca.",
     coordenadas: { tipo: "polygon", zona: "mitad inferior del primer cuartel" }
   },
   {
@@ -149,8 +171,11 @@ const elementosEscudo = [
       "Sobre ondas de azur y plata se eleva una roca de color pardo; sobre ella, una pieza dorada en forma de roque (torre de ajedrez), y sobre el roque, un racimo de moras de color púrpura.",
     significado:
       "Conjunto de armas parlantes de la familia Rocamora («roca» + «mora»): la roca y el roque aluden al apellido Rocamora, y el racimo de moras refuerza ese juego heráldico con el mismo apellido.",
-    historia: TEXTO_INTERPRETACION_ORIENTATIVA,
-    fuente: FUENTE_PRINCIPAL,
+    historia:
+      "La familia Rocamora ligó su historia a la localidad a principios del siglo XVII: en 1617, don Francisco de Rocamora y Tomás adquirió las tierras y la jurisdicción de los pagos de La Buznegra y Sangonera la Seca. Bajo su dominio, unificó ambos territorios dándoles el nombre original de Villanueva de Sangonera. Debido a su importancia histórica, el escudo nobiliario de la familia Rocamora ocupa el cuartel superior derecho del escudo oficial de Sangonera la Seca, representado por una roca sobre ondas de azur y plata, coronada por una torre de oro y un racimo de moras, flanqueada por dos flores de lis.",
+    fuente:
+      FUENTE_PRINCIPAL +
+      " Los datos sobre la adquisición de las tierras en 1617 por Francisco de Rocamora y Tomás proceden de las crónicas recopiladas por el portal oficial del Ayuntamiento de Sangonera la Seca y de los archivos históricos digitalizados de Región de Murcia Digital (Regmurcia). El origen del apellido, que se remonta al caballero Pedro Ramón de Rocamora en el siglo XIII y sus ramas posteriores en Orihuela, Alicante y Murcia, está documentado en tratados de genealogía como los recogidos en Wikipedia (Casa de Rocamora) y en institutos heráldicos como Heraldry Institute.",
     coordenadas: { tipo: "polygon", zona: "centro del segundo cuartel" }
   },
   {
@@ -203,8 +228,11 @@ const elementosEscudo = [
     significado:
       "Representan la famosa batalla, muy mencionada en la Edad Media, que mantuvieron moros y cristianos en la vega de Sangonera.",
     historia:
-      "Según recoge la tradición citada por Saavedra Fajardo, «por la sangre vertida, hoy se llama Sangonera». La mitad inferior del escudo simboliza así el origen del nombre del pueblo.",
-    fuente: FUENTE_PRINCIPAL,
+      "Según recoge la tradición citada por Saavedra Fajardo, «por la sangre vertida, hoy se llama Sangonera». La mitad inferior del escudo simboliza así el origen del nombre del pueblo. " +
+      "Las espadas evocan la llamada batalla de la Vega de Sangonera (o del Campo de Sangonera), uno de los episodios más legendarios de la invasión musulmana de la península. Según cronistas históricos e hipótesis de investigadores, el enfrentamiento directo entre el ejército árabe comandado por Abd al-Aziz y las tropas cristianas visigodas del duque Teodomiro tuvo lugar en el año 713, en el actual territorio de Sangonera la Verde y Sangonera la Seca. Algunos historiadores antiguos y textos como la Primera Crónica General de España (compilada bajo Alfonso X el Sabio) o el Poema de Fernán González llegaron incluso a situar aquí la mítica y definitiva caída del rey visigodo Don Rodrigo, en lugar de en el río Guadalete (Cádiz); la Crónica del Moro Rasis menciona incluso el supuesto hallazgo de una lápida del monarca en la zona. El historiador Francisco Cascales describió el choque como un enfrentamiento brutal y sangriento, tan violento que dio pie a la leyenda popular de que el nombre de Sangonera procedía de «Sangre Negra», por el color que tomó el campo tras la matanza; estudios lingüísticos modernos apuntan en cambio a que la etimología real procede del latín «Sanguinaria» (lugar de plantas sanguinarias) o del árabe «fahs Sanqunayra». Las fuerzas cristianas locales fueron diezmadas, pero el duque Teodomiro logró replegar de forma ordenada a los supervivientes hacia Orihuela. Sitiado y en inferioridad numérica, ideó entonces la estratagema de vestir a las mujeres de la ciudad con ropas de guerreros sobre las murallas para simular un ejército numeroso, lo que forzó a Abd al-Aziz a negociar una capitulación honrosa: el llamado Pacto de Teodomiro (año 713), que permitió a los cristianos del territorio de Tudmir conservar sus propiedades, su fe y su autonomía política a cambio del pago de tributos.",
+    fuente:
+      FUENTE_PRINCIPAL +
+      " Los datos sobre la batalla de la Vega de Sangonera proceden de la combinación de crónicas medievales, obras de historiadores clásicos y recopilaciones de la Región de Murcia: el Licenciado Francisco Cascales (1564-1642), en sus «Discursos históricos de la muy noble y muy leal ciudad de Murcia»; la Primera Crónica General de España (siglo XIII, bajo Alfonso X el Sabio); el Poema de Fernán González (hacia 1255); Diego Rodríguez de Almela y Saavedra Fajardo, que respaldaron la tradición de la batalla «Sanguinaria» de moros y visigodos en el año 713; y el portal Región de Murcia Digital (Regmurcia).",
     coordenadas: { tipo: "polygon", zona: "centro del campo negro" }
   },
   {
@@ -271,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoDescripcion = document.getElementById('info-descripcion');
   const infoSignificado = document.getElementById('info-significado');
   const infoHistoria = document.getElementById('info-historia');
+  const infoMultimedia = document.getElementById('info-multimedia');
   const infoFuente = document.getElementById('info-fuente');
   const panelNavegacion = document.getElementById('panel-info-navegacion');
   const infoPaso = document.getElementById('info-paso');
@@ -283,7 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const seccionCompleta = document.getElementById('seccion-completa');
   const explicacionGeneralEl = document.getElementById('explicacion-general');
   const tarjetasEl = document.getElementById('tarjetas-elementos');
-  const leyendaCategoriasEl = document.getElementById('leyenda-categorias');
   const pieAutor = document.getElementById('pie-autor');
   const btnZoomIn = document.getElementById('btn-zoom-in');
   const btnZoomOut = document.getElementById('btn-zoom-out');
@@ -299,18 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('titulo-proyecto').textContent = tituloProyecto;
   document.getElementById('subtitulo-proyecto').textContent = subtituloProyecto;
   pieAutor.textContent = "Autor: " + autor;
-  function pintarLeyendaCategorias() {
-    leyendaCategoriasEl.innerHTML = '';
-    categoriasEscudo.forEach(cat => {
-      const li = document.createElement('li');
-      const punto = document.createElement('span');
-      punto.className = 'punto-categoria';
-      punto.style.background = cat.color;
-      li.appendChild(punto);
-      li.appendChild(document.createTextNode(cat.nombre));
-      leyendaCategoriasEl.appendChild(li);
-    });
-  }
   const tooltip = document.createElement('div');
   tooltip.className = 'tooltip-zona';
   viewport.appendChild(tooltip);
@@ -385,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
     infoDescripcion.textContent = datos.descripcion || TEXTO_PENDIENTE_DOCUMENTACION;
     infoSignificado.textContent = datos.significado || TEXTO_PENDIENTE_DOCUMENTACION;
     infoHistoria.textContent = datos.historia || TEXTO_PENDIENTE_DOCUMENTACION;
+    pintarMultimedia(datos.multimedia);
     infoFuente.textContent = datos.fuente || "Información pendiente de documentación.";
     panelVacio.hidden = true;
     panelContenido.hidden = false;
@@ -398,6 +415,50 @@ document.addEventListener('DOMContentLoaded', () => {
       panelNavegacion.hidden = true;
     }
     panelContenido.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  function pintarMultimedia(items) {
+    infoMultimedia.innerHTML = '';
+    if (!items || !items.length) {
+      infoMultimedia.hidden = true;
+      return;
+    }
+    items.forEach(item => {
+      const figura = document.createElement('figure');
+      figura.className = 'panel-info__multimedia-item';
+      if (item.tipo === 'video') {
+        const video = document.createElement('video');
+        video.src = item.src;
+        video.controls = true;
+        video.preload = 'metadata';
+        figura.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.alt || '';
+        img.loading = 'lazy';
+        img.tabIndex = 0;
+        img.title = 'Ver a pantalla completa';
+        img.addEventListener('click', () => abrirPantallaCompleta(img));
+        img.addEventListener('keydown', (evt) => {
+          if (evt.key === 'Enter' || evt.key === ' ') {
+            evt.preventDefault();
+            abrirPantallaCompleta(img);
+          }
+        });
+        figura.appendChild(img);
+      }
+      if (item.pie) {
+        const pie = document.createElement('figcaption');
+        pie.textContent = item.pie;
+        figura.appendChild(pie);
+      }
+      infoMultimedia.appendChild(figura);
+    });
+    infoMultimedia.hidden = false;
+  }
+  function abrirPantallaCompleta(el) {
+    const pedir = el.requestFullscreen || el.webkitRequestFullscreen;
+    if (pedir) pedir.call(el);
   }
   function hexConAlfa(hex, alfa) {
     const c = hex.replace('#', '');
@@ -512,11 +573,6 @@ document.addEventListener('DOMContentLoaded', () => {
     desplazY = 0;
     aplicarTransformacion(true);
   });
-  viewport.addEventListener('wheel', (evt) => {
-    evt.preventDefault();
-    const delta = evt.deltaY < 0 ? ZOOM_PASO : -ZOOM_PASO;
-    establecerZoom(escala + delta);
-  }, { passive: false });
   viewport.addEventListener('mousedown', (evt) => {
     if (escala <= 1) return;
     arrastrando = true;
@@ -579,7 +635,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (salir) salir.call(document);
     }
   });
-  pintarLeyendaCategorias();
   pintarExplicacionGeneral();
   pintarTarjetas();
 });
