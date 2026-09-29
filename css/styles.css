@@ -199,6 +199,36 @@ main {
   cursor: grabbing;
 }
 
+/* Pista visual: en móvil, el desplazamiento de la página no funciona
+   sobre el dibujo del escudo (esa zona está reservada al zoom/arrastre),
+   así que se indica con dos flechas fijas en el borde derecho, fuera del
+   escudo, que recuerdan por dónde sí se puede deslizar la pantalla. */
+.indicador-scroll {
+  display: none;
+}
+
+@media (max-width: 900px) and (pointer: coarse) {
+  .indicador-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    position: fixed;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.55;
+  }
+
+  .indicador-scroll__flecha {
+    font-size: 0.8rem;
+    line-height: 1;
+    color: var(--color-texto-suave);
+  }
+}
+
 .escudo-lienzo {
   position: absolute;
   inset: 0;
