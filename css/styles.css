@@ -191,6 +191,7 @@ main {
   aspect-ratio: 950 / 1433;
   max-height: 70vh;
   touch-action: none;
+  overscroll-behavior: contain;
   cursor: grab;
 }
 
@@ -223,6 +224,7 @@ main {
 .svg-zonas {
   position: absolute;
   inset: 0;
+  touch-action: none;
   width: 100%;
   height: 100%;
 }
@@ -231,6 +233,7 @@ main {
 .svg-zonas path,
 .svg-zonas circle,
 .svg-zonas rect {
+  touch-action: none;
   fill: rgba(255, 255, 255, 0);
   stroke: transparent;
   stroke-width: 3;
