@@ -58,10 +58,9 @@ def minificar_html(texto):
 
 
 def main():
-    if DESTINO.exists():
-        shutil.rmtree(DESTINO)
-    (DESTINO / "css").mkdir(parents=True)
-    (DESTINO / "js").mkdir(parents=True)
+    # No se borra la carpeta (OneDrive puede bloquearla): se sobrescriben los archivos.
+    (DESTINO / "css").mkdir(parents=True, exist_ok=True)
+    (DESTINO / "js").mkdir(parents=True, exist_ok=True)
 
     html = (ORIGEN / "index.html").read_text(encoding="utf-8")
     html_min = minificar_html(html)
@@ -76,7 +75,7 @@ def main():
         js_min = quitar_comentarios_js(js)
         (DESTINO / "js" / nombre).write_text(js_min, encoding="utf-8")
 
-    shutil.copytree(ORIGEN / "assets", DESTINO / "assets")
+    shutil.copytree(ORIGEN / "assets", DESTINO / "assets", dirs_exist_ok=True)
 
     def tam(p):
         return p.stat().st_size
